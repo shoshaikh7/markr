@@ -1,0 +1,24 @@
+.form, .form3 {
+	width: 50%;
+	@include span-columns(6);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 7px;
+	padding: 1em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.form3 {
+	width: 50%;
+	@include span-columns(6);
+	@include shift(3);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 7px;
+	padding: 1em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.form3 {
+	@include shift(3);	
+}

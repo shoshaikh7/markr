@@ -4,12 +4,14 @@
   <title>Markr</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% flash.each do |name, msg| %>
-		<%= content_tag(:div, msg, class: "alert alert-info") %>
-	<% end %>
+	<%= render partial: 'shared/nav'  %>
+	<% if notice %> <p class="notice"><%= notice %></p> <% end %>
+    <% if alert %> <p class="alert"><%= alert %></p> <% end %>
+
 <%= yield %>
 
 </body>

@@ -14,9 +14,13 @@ gem 'spring',        group: :development
 
 gem 'devise', '~> 3.4.1'
 
+#Bourbon 
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'refills'
+
 group :development, :test do
-  gem 'better_errors', '~> 2.0.0'
-  gem 'binding_of_caller', '~> 0.7.2'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
   gem 'factory_girl_rails'	

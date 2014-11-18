@@ -1,0 +1,14 @@
+.button, button,
+input[type="submit"] {
+  @extend %button;
+  @include appearance(none);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.signup_button a{
+	color: #333;
+}
