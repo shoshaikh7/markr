@@ -3,3 +3,41 @@
 </div>
 
 <h1>Article Index</h1>
+
+<div class="form">
+	<%= form_for @article do |f| %>
+		<% if @article.errors.any? %>
+	        <ul>
+	            <% @article.errors.full_messages.each do |message| %>
+	            	<li><%= message %></li>
+	            <% end %>
+	        </ul>
+	    <% end %>
+		
+		<div class="field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="field">
+			<%= f.label :author %>
+			<%= f.text_field :author %>
+		</div>
+
+		<div class="field">
+			<%= f.label :date_published %>
+			<%= f.date_field :date_published %>
+		</div>
+
+		<div class="field">
+			<%= f.label :url %>
+			<%= f.url_field :url %>
+		</div>
+
+		<div class="field">
+			<%= f.label :url %>
+			<%= f.url_field :url %>
+		</div>
+
+	<% end %>
+</div>
