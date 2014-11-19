@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.date :date_published
-      t.string :tags
+      t.string :tag
       t.string :url
       t.references :user, index: true
 

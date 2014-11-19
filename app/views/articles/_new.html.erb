@@ -1,0 +1,47 @@
+<div class="hero formhero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h2>My Articles</h2>
+    </div>
+  </div>
+</div>
+
+	<div class="bookmark_form" align="center">
+		<%= form_for [current_user, @article] do |f| %>
+			<% if @article.errors.any? %>
+		        <ul>
+		            <% @article.errors.full_messages.each do |message| %>
+		            	<li><%= message %></li>
+		            <% end %>
+		        </ul>
+		    <% end %>
+			<div class="bookmark_field">
+				<%= f.label :title %>
+				<%= f.text_field :title %>
+			</div>
+
+			<div class="bookmark_field">
+				<%= f.label :author %>
+				<%= f.text_field :author %>
+			</div>
+
+			<div class="bookmark_field">
+				<%= f.label :date_published %>
+				<%= f.date_field :date_published %>
+			</div>
+
+			<div class="bookmark_field">
+				<%= f.label :url %>
+				<%= f.url_field :url %>
+			</div>
+
+			<div class="bookmark_field">
+				<%= f.label :tag_list, "Tags (separated by commas)" %>
+				<%= f.text_field :tag_list %>
+			</div>
+
+			<div class="bookmark_field" align="center">
+				<%= f.submit "Bookmark Article" %>
+			</div>
+		<% end %>
+		</div>

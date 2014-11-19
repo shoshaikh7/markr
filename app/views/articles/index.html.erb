@@ -1,43 +1,25 @@
 <div class="container">
 	<%= render partial: 'shared/leftnav' %>
+	<%= render partial: 'new' %>
 </div>
 
-<h1>Article Index</h1>
+	<div id = "cloud"><span class='shadow'></span>
+		<% tag_cloud Article.tag_counts, %w[s m l] do |tag, css_class| %>
+			<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+		<% end %>
+	</div>
+	
+		<% @articles.each do |article| %>
+			<div class = "article_bookmarks">
+				<ul>	
+					<li>Title: <%= article.title %></li>
+					<li>Author: <%= article.author %></li>
+					<li>Date: <%= article.date_published %></li>
+					<!-- <li>Url: <%= article.url %></li> -->
+					<li>Tags: <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
+				</ul>
+			</div>	
+		<% end %>
+	
 
-<div class="form">
-	<%= form_for @article do |f| %>
-		<% if @article.errors.any? %>
-	        <ul>
-	            <% @article.errors.full_messages.each do |message| %>
-	            	<li><%= message %></li>
-	            <% end %>
-	        </ul>
-	    <% end %>
-		
-		<div class="field">
-			<%= f.label :title %>
-			<%= f.text_field :title %>
-		</div>
 
-		<div class="field">
-			<%= f.label :author %>
-			<%= f.text_field :author %>
-		</div>
-
-		<div class="field">
-			<%= f.label :date_published %>
-			<%= f.date_field :date_published %>
-		</div>
-
-		<div class="field">
-			<%= f.label :url %>
-			<%= f.url_field :url %>
-		</div>
-
-		<div class="field">
-			<%= f.label :url %>
-			<%= f.url_field :url %>
-		</div>
-
-	<% end %>
-</div>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users do
   	resources :articles
   end
+
+  get 'tags/:tag', to: 'articles#index', as: :tag
   
   root 'home#index'
 

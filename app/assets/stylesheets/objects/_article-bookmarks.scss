@@ -1,0 +1,72 @@
+.article_bookmarks {
+	border: 1px solid black;
+	margin: 1em;
+	margin-left: 2.5em;
+	padding: 1em;
+	border-radius: 7px;
+	width: 20%;
+	height: 11em;
+	overflow: scroll;
+	display: inline-block;
+}
+
+#cloud {
+	padding: 2em;
+	border-radius: 10px;
+	line-height: 1.6em;
+	.s { 
+		font-size: 1.2em; 
+	}
+	.m { 
+		font-size: 1.4em; 
+	}
+	.l { 
+		font-size: 1.6em; 
+	}
+	width: 350px; height: 120px;
+	background: #d0e9fb;
+	background: linear-gradient(top, #d0e9fb 5%, #d6f0fd 100%);
+	border-radius: 100px;
+	position: relative;
+	margin: 120px auto 20px;
+}
+
+#cloud:after, #cloud:before {
+	content: '';
+	position: absolute;
+	background: #d0e9fb;
+	z-index: -1;
+}
+
+#cloud:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+}
+
+#cloud:before {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+}
+
+.shadow {
+	width: 350px;
+	position: absolute; bottom: -10px; 
+	background: #000;
+	z-index: -1;
+	
+	box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}

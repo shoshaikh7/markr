@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'devise', '~> 3.4.1'
+gem 'acts-as-taggable-on', '~> 3.4.2'
+gem 'link_thumbnailer', '~> 2.3.2'
 
 #Bourbon 
 gem 'bourbon'
