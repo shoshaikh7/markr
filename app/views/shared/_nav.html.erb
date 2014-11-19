@@ -6,8 +6,13 @@
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
       <ul id="navigation-menu">
+      <% if current_user %>
+        <button type="button" class="js-menu-trigger sliding-menu-button">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+       </button>
+      <% else %>
         <li class="nav-link"> <%= link_to "Home", root_path%></li>
-        </li>
+      <% end %> 
       </ul>
     </div>
     <div class="navigation-tools"> 
@@ -17,6 +22,7 @@
             <%= link_to "Sign In", new_user_session_path, class: :sign_in %> 
             <%= link_to "Sign Up", new_user_registration_path, class: :sign_up %>
     <% end %>
+
     </div>
   </div>
 </header>

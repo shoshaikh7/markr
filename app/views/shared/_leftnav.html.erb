@@ -1,0 +1,10 @@
+<nav class="js-menu sliding-menu-content">
+  <ul>
+  	<li><%= link_to "Home", user_path(current_user) %></li>
+    <li><%= link_to "Articles", user_articles_path(current_user) %></li>
+    <li><%= link_to "Images", user_articles_path(current_user) %></li>
+    <li><%= link_to "Videos", user_articles_path(current_user) %></li>
+  </ul>
+</nav>
+
+<div class="js-menu-screen menu-screen"></div>
