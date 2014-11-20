@@ -11,11 +11,33 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
+//= require best_in_place
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
+
 $(document).on('ready page:load', function(){
+
+  /* Enable delete funcution for bookmarks */
+  $(document).on('ajax:success', '.delete', function() {
+    $(this).closest('.article_bookmarks').fadeOut();
+  });
+
+  /* Sort bookmarks */
+  $(".board").sortable({
+    update: function() {
+      $.post($(this).data('update-url'),
+      $(this).sortable('serialize'));
+    }
+  });
+
+
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+
+  /* Nav bar */
   $('.js-menu-trigger').on('click touchstart', function(e){
     $('.js-menu').toggleClass('is-visible');
     $('.js-menu-screen').toggleClass('is-visible');

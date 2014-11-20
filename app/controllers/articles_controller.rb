@@ -13,6 +13,10 @@ class ArticlesController < ApplicationController
 		
 	end
 
+	def show
+		
+	end
+
 	def new
 		@article = Article.new
 	end
@@ -24,6 +28,31 @@ class ArticlesController < ApplicationController
 		@article.save
 		redirect_to user_articles_path(current_user), notice: "Article saved!"
 	end
+
+	def update
+		@article = Article.find(params[:id])
+		if @article.update(article_params)
+	  		respond_to do |format|
+	  			format.html { redirect_to [current_user, article], notice: 'Site successfully updated.' }
+	      		format.json { respond_with_bip(@article) }
+	  		end
+	  	else
+	  		respond_to do |format|
+	  			format.html { redirect_to [current_user, article], notice: 'Something went wrong.' }
+	      		format.json { respond_with_bip(@article) }
+	  		end
+	  	end
+	end
+
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+		respond_to do |format|
+			format.html { redirect_to [current_user, article], notice: "Bookmark was deleted." }
+			format.js { head :no_content }
+		end
+	end
+
 
 	private
 

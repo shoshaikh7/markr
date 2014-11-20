@@ -8,18 +8,21 @@
 			<%= link_to tag.name, tag_path(tag.name), class: css_class %>
 		<% end %>
 	</div>
-	
+		<div class="board">
 		<% @articles.each do |article| %>
 			<div class = "article_bookmarks">
-				<ul>	
-					<li>Title: <%= article.title %></li>
-					<li>Author: <%= article.author %></li>
-					<li>Date: <%= article.date_published %></li>
-					<!-- <li>Url: <%= article.url %></li> -->
+				<ul>
+					<span class="delete"><%= link_to 'X', user_article_path(current_user, article), method: :delete, remote: true %>
+					</span>	
+					<li id="bookmark_image"><%= image_tag article.thumbnail %></li>
+					<li>Title: <%= best_in_place [current_user, article], :title, as: :input %></li>
+					<li>Author: <%= best_in_place [current_user, article], :author, as: :input %></li>
+					<li>Date: <%= best_in_place [current_user, article], :date_published, as: :input %></li>
 					<li>Tags: <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
+					<li>Add Tags: <%= best_in_place [current_user, article], :tag_list, as: :input %></li>
 				</ul>
 			</div>	
 		<% end %>
-	
+		</div>
 
 

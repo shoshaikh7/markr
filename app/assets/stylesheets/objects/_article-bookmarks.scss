@@ -5,9 +5,43 @@
 	padding: 1em;
 	border-radius: 7px;
 	width: 20%;
-	height: 11em;
+	height: 18em;
 	overflow: scroll;
 	display: inline-block;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.article_bookmarks:hover{
+	border: 2px solid #cfcfcf;
+}
+
+#bookmark_image img{
+	height: 6em;
+	margin-left: 0.7em;
+	width: 90%;
+	border-radius: 7px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.delete {
+	float: right;
+	margin-top: -1em;
+	margin-right: -1em;
+	font-weight: bold;
+	font-size: 10px;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+	border-radius: 100%;
+	background: rgba(168, 0, 3, 0.2) ;
+}
+
+.delete a {
+	text-decoration: none;
+	color: white;
+}
+
+.delete a:hover {
+	color: #ff8587;
 }
 
 #cloud {
@@ -15,13 +49,13 @@
 	border-radius: 10px;
 	line-height: 1.6em;
 	.s { 
-		font-size: 1.2em; 
+		font-size: 1em; 
 	}
 	.m { 
-		font-size: 1.4em; 
+		font-size: 1.2em; 
 	}
 	.l { 
-		font-size: 1.6em; 
+		font-size: 1.4em; 
 	}
 	width: 350px; height: 120px;
 	background: #d0e9fb;

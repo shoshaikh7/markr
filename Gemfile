@@ -15,6 +15,8 @@ gem 'spring',        group: :development
 gem 'devise', '~> 3.4.1'
 gem 'acts-as-taggable-on', '~> 3.4.2'
 gem 'link_thumbnailer', '~> 2.3.2'
+gem 'best_in_place', '~> 3.0.0'
+gem 'jquery-ui-rails'
 
 #Bourbon 
 gem 'bourbon'
