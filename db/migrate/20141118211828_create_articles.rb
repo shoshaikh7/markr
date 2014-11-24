@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :author
       t.date :date_published
       t.string :tag
+      t.string :image_url
       t.string :url
       t.references :user, index: true
 

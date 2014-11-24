@@ -1,8 +1,11 @@
 <header class="navigation">
   <div class="navigation-wrapper">
-    <a href="javascript:void(0)" class="logo">
-      <i class="fa fa-bookmark fa-2x"></i>
-    </a>
+    
+      <% if current_user %>
+        <a href="<%= user_path(current_user) %>" class='logo'> <i class="fa fa-bookmark fa-2x"></i></a>
+      <% else %>
+         <a href="<%= root_path %>" class='logo'> <i class="fa fa-bookmark fa-2x"></i></a>
+      <% end %>
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
       <ul id="navigation-menu">

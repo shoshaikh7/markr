@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
 		@article = Article.new(article_params)
 		@article.tag_list.add(params[:tag_list], parse: true)
 		@article.user = current_user
+		@article.set_image
 		@article.save
 		redirect_to user_articles_path(current_user), notice: "Article saved!"
 	end

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141119160307) do
     t.string   "author"
     t.date     "date_published"
     t.string   "tag"
+    t.string   "image_url"
     t.string   "url"
     t.integer  "user_id"
     t.datetime "created_at"
