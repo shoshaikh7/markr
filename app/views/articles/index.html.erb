@@ -8,9 +8,9 @@
 			<%= link_to tag.name, tag_path(tag.name), class: css_class %>
 		<% end %>
 	</div>
-		<div class="board">
+		<div class="board" data-update-url="<%= sort_users_path %>">
 		<% @articles.each do |article| %>
-			<div class = "article_bookmarks">
+			<%= content_tag_for :div, article, class: "article_bookmarks" do %>
 				<ul>
 					<span class="delete"><%= link_to 'X', user_article_path(current_user, article), method: :delete, remote: true %>
 					</span>	
@@ -21,7 +21,7 @@
 					<li>Tags: <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
 					<li>Add Tags Here => <%= best_in_place [current_user, article], :tag_list, as: :input%></li>
 				</ul>
-			</div>	
+			<% end %>	
 		<% end %>
 		</div>
 

@@ -27,5 +27,6 @@ gem 'refills'
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
+  gem 'quiet_assets'
   gem 'factory_girl_rails'	
 end
