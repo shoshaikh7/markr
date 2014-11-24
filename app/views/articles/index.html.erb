@@ -14,13 +14,12 @@
 				<ul>
 					<span class="delete"><%= link_to 'X', user_article_path(current_user, article), method: :delete, remote: true %>
 					</span>	
-					
-					<li id="bookmark_image"><%= image_tag(article.image_url) %></li>
+					<li id='bookmark_image'><%= link_to image_tag(article.image_url), article.url, :target => "_blank" %></li>
 					<li>Title: <%= best_in_place [current_user, article], :title, as: :input %></li>
 					<li>Author: <%= best_in_place [current_user, article], :author, as: :input %></li>
 					<li>Date: <%= best_in_place [current_user, article], :date_published, as: :input %></li>
 					<li>Tags: <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
-					<li>Add Tags: <%= best_in_place [current_user, article], :tag_list, as: :input %></li>
+					<li>Add Tags Here => <%= best_in_place [current_user, article], :tag_list, as: :input%></li>
 				</ul>
 			</div>	
 		<% end %>
